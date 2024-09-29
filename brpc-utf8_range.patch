@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b14fe178..48d377bd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -325,6 +325,9 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+         "-Wl,-U,__Z13GetStackTracePPvii")
+ endif()
+ 
++find_package(utf8_range)
++set(DYNAMIC_LIB ${DYNAMIC_LIB} utf8_range::utf8_validity)
++
+ # for *.so
+ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/output/lib)
+ # for *.a
